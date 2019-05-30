@@ -10,11 +10,11 @@ namespace Fitbit.Api.Abstractions.Endpoints
     {
         Task<object> GetHeartRateTimeSeriesAsync(DateTime date, PeriodType period, string userId = Defaults.CurrentUser);
 
-        Task<object> GetHeartRateTimeSeriesAsync(string date, PeriodType period, string userId = Defaults.CurrentUser);
+        Task<HeartRateTimeSeries> GetHeartRateTimeSeriesAsync(string date, PeriodType period, string userId = Defaults.CurrentUser);
 
         Task<object> GetHeartRateTimeSeriesAsync(DateTime baseDate, DateTime endDate, string userId = Defaults.CurrentUser);
 
-        Task<HeartRateTimeSeries> GetHeartRateTimeSeriesAsync(string baseDate, string endDate, string userId = Defaults.CurrentUser);
+        Task<object> GetHeartRateTimeSeriesAsync(string baseDate, string endDate, string userId = Defaults.CurrentUser);
 
         Task<object> GetHeartRateIntradayTimeSeriesAsync();
     }
