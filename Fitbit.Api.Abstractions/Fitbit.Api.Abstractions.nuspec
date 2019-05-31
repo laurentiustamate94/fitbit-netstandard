@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Fitbit.Api.Abstractions</id>
+    <version>0.0.1</version>
+    <title>Fitbit.Api.Abstractions</title>
+    <authors>Laurentiu Stamate</authors>
+    <owners>Laurentiu Stamate</owners>
+    <licenseUrl>https://github.com/laurentiustamate94/fitbit-netstandard/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/laurentiustamate94/fitbit-netstandard</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/laurentiustamate94/fitbit-netstandard/master/nuget/fitbit-logo_64.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NetStandard abstractions of Fitbit WebApi</description>
+    <releaseNotes>Initial release</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>fitbit fitbit-api netstandard abstractions nuget</tags>
+  </metadata>
+
+  <!-- NetStandard reference assemblies -->
+  <files>
+    <file src="bin\Release\Fitbit.Api.Abstractions.dll" target="lib\netstandard2.0\Fitbit.Api.Abstractions.dll" />
+  </files>
+
+  <dependencies>
+    <group targetFramework="netstandard2.0">
+      <dependency id="Newtonsoft.Json" version="12.0.1" />
+    </group>
+  </dependencies>
+</package>
