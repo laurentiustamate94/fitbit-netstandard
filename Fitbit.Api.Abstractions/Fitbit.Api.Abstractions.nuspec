@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package >
+<package>
   <metadata>
     <id>Fitbit.Api.Abstractions</id>
     <version>0.0.1</version>
@@ -14,16 +14,16 @@
     <releaseNotes>Initial release</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>fitbit fitbit-api netstandard abstractions nuget</tags>
+
+    <dependencies>
+      <group targetFramework="netstandard2.0">
+        <dependency id="Newtonsoft.Json" version="12.0.1" />
+      </group>
+    </dependencies>
   </metadata>
 
   <!-- NetStandard reference assemblies -->
   <files>
-    <file src="bin\Release\Fitbit.Api.Abstractions.dll" target="lib\netstandard2.0\Fitbit.Api.Abstractions.dll" />
+    <file src="bin\Release\netstandard2.0\Fitbit.Api.Abstractions.dll" target="lib\netstandard2.0\Fitbit.Api.Abstractions.dll" />
   </files>
-
-  <dependencies>
-    <group targetFramework="netstandard2.0">
-      <dependency id="Newtonsoft.Json" version="12.0.1" />
-    </group>
-  </dependencies>
 </package>
