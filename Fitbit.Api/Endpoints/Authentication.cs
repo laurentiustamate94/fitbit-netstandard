@@ -34,6 +34,12 @@ namespace Fitbit.Api.Endpoints
             HttpClient = new HttpClient();
         }
 
+        internal Authentication(AuthenticationResponse authenticationResponse)
+        {
+            AuthenticationResponse = authenticationResponse;
+            HttpClient = new HttpClient();
+        }
+
         public string GetCodeGrantFlowUrl(PermissionsRequestType[] scope, AuthenticationPromptType prompt = AuthenticationPromptType.None, string state = "")
         {
             var authorizationUrl = new StringBuilder(AuthorizeBaseUrl);
@@ -76,7 +82,7 @@ namespace Fitbit.Api.Endpoints
             return authorizationUrl.ToString();
         }
 
-        public async Task FinishCodeGrantFlowWithPkceAsync(string code, ExpiryType expiresIn = ExpiryType.EightHours)
+        public async Task<AuthenticationResponse> FinishCodeGrantFlowWithPkceAsync(string code, ExpiryType expiresIn = ExpiryType.EightHours)
         {
             SetBasicAuthorizationHeader();
 
@@ -84,6 +90,8 @@ namespace Fitbit.Api.Endpoints
             var responseContent = await response.Content.ReadAsStringAsync();
 
             AuthenticationResponse = JsonConvert.DeserializeObject<AuthenticationResponse>(responseContent);
+
+            return AuthenticationResponse;
         }
 
         public string GetImplicitGrantFlowUrl(PermissionsRequestType[] scope, AuthenticationPromptType prompt = AuthenticationPromptType.None, ExpiryType expiresIn = ExpiryType.OneDay, string state = "")

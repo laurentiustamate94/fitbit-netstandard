@@ -28,5 +28,12 @@ namespace Fitbit.Api
 
             this.HeartRate = new HeartRate(Authentication);
         }
+
+        public FitbitClient(AuthenticationResponse authenticationResponse)
+        {
+            this.Authentication = new Authentication(authenticationResponse);
+
+            this.HeartRate = new HeartRate(Authentication);
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace Fitbit.Api.Abstractions.Endpoints
 
         string GetCodeGrantFlowWithPkceUrl(PermissionsRequestType[] scope, AuthenticationPromptType prompt = AuthenticationPromptType.None, string state = "");
 
-        Task FinishCodeGrantFlowWithPkceAsync(string code, ExpiryType expiresIn = ExpiryType.EightHours);
+        Task<AuthenticationResponse> FinishCodeGrantFlowWithPkceAsync(string code, ExpiryType expiresIn = ExpiryType.EightHours);
 
         string GetImplicitGrantFlowUrl(PermissionsRequestType[] scope, AuthenticationPromptType prompt = AuthenticationPromptType.None, ExpiryType expiresIn = ExpiryType.OneDay, string state = "");
 
