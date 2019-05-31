@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Fitbit.Api.Abstractions\Fitbit.Api.Abstractions.csproj" />
+    <PackageReference Include="Fitbit.Api.Abstractions" Version="0.0.1" />
   </ItemGroup>
 
 </Project>
